@@ -1,0 +1,71 @@
+
+/*
+This is a comment that the browser will ignore.
+It's for humans only.
+*/ 
+
+div#content {
+    margin-left: 3em;
+    margin-top: 2.5em;
+    width: 98%;
+    float: left;
+  }
+  
+  div#header {
+    width: 100%;
+    height: 2.3em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #454545;
+    font-family: Verdana, Geneva, sans-serif;
+    font-weight: 200;
+    color: #c0c0c0;
+    font-size: 0.8em;
+    /* margin-left: 5em; */
+    /* padding-left: 4em; */
+  }
+  div#header-content {
+    margin-left: 5em;
+    margin-top: 0.2em;
+  }
+  div#leftbar {
+    width: 3em;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #515151;
+  }
+  div#header h2 {
+    font-family: Verdana, Geneva, sans-serif;
+    font-weight: 200;
+    color: #c0c0c0;
+    font-size: 0.8em;
+    margin-left: 5em;
+    padding: 0;
+  }
+  
+  i {
+    font-family: Verdana, Geneva, sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    color: #407cfd;
+  }
+  
+  div#footer {
+    height: 1.2em;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 0.1em;
+    background-color: #407cfd;
+    text-align: center;
+  }
+
+  div#output {
+    overflow: auto;
+  }
+  
+  

@@ -1,0 +1,81 @@
+<html>
+  <head>
+    <title>Practice</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <div id="header">
+      <div id="header-content">
+        <i>File:</i> dgdsgfgdf gdg 
+        <label id="engine">
+          <i>Engine:</i>
+          <select id="select-engine">
+            <option>circo</option>
+            <option>dot</option>
+            <option>fdp</option>
+            <option>neato</option>
+            <option>osage</option>
+            <option>twopi</option>
+          </select>
+        </label>
+        <input id="dot" hidden />
+      </div>
+    </div>
+       
+       
+        <!--
+        This is a comment that the browser will ignore.
+        It's for humans only.
+        -->
+
+        <div id="leftbar"></div>
+        <div id="content">
+            <div id="options">
+              
+                
+                
+              </div>
+              <div id="output">
+                <div id="error"></div>
+              </div>
+                 
+        </div>
+        <div id="footer"></div>
+        
+        <script src="./viz/viz.js"></script>
+        <script src="./viz/full.render.js"></script>
+        <script>
+          // 'digraph { a -> b }'
+            require('./renderer');
+            var viz = new Viz();
+            const dotF = document.getElementById('dot');
+            function render(eng, dot) {
+            viz.renderSVGElement(dot, {engine: eng, format: "svg"})
+            .then(function(element) {
+                const output = document.getElementById('output');
+                while (output.firstChild) {
+                  output.firstChild.remove();
+                }
+               
+                output.appendChild(element);
+            //   document.body.appendChild(element);
+            })
+            .catch(error => {
+              // Create a new Viz instance (@see Caveats page for more info)
+              viz = new Viz();
+          
+              // Possibly display the error
+              console.error(error);
+            });
+            }
+            var engine = document.getElementById('select-engine');
+            renderCallback = () => {
+              //  alert("I am an alert box!" + "ss" + engine.value);
+              console.log(dotF.value);
+               render( engine.value, dotF.value);
+               };
+            engine.addEventListener("change", renderCallback);
+            dotF.addEventListener("change", renderCallback);
+          </script>
+  </body>
+</html>
