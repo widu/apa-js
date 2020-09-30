@@ -5,15 +5,16 @@ It's for humans only.
 */ 
 
 div#content {
-    margin-left: 3em;
+    /* margin-left: 3em;
     margin-top: 2.5em;
     width: 98%;
-    float: left;
+    float: left; */
+    /* height: 100%; */
   }
   
   div#header {
     width: 100%;
-    height: 2.3em;
+    height: 2.3em; 
     position: absolute;
     top: 0;
     left: 0;
@@ -22,14 +23,15 @@ div#content {
     font-weight: 200;
     color: #c0c0c0;
     font-size: 0.8em;
+    /* margin-top: 1.4em; */
     /* margin-left: 5em; */
     /* padding-left: 4em; */
   }
   div#header-content {
-    margin-left: 5em;
+    margin-left: 2em;
     margin-top: 0.2em;
   }
-  div#leftbar {
+  /* div#leftbar {
     width: 3em;
     height: 100%;
     position: absolute;
@@ -44,7 +46,7 @@ div#content {
     font-size: 0.8em;
     margin-left: 5em;
     padding: 0;
-  }
+  } */
   
   i {
     font-family: Verdana, Geneva, sans-serif;
@@ -55,8 +57,9 @@ div#content {
   
   div#footer {
     height: 1.2em;
+    width: 100%;
     position: absolute;
-    right: 0;
+    /* right: 0; */
     bottom: 0;
     left: 0;
     padding: 0.1em;
@@ -64,8 +67,99 @@ div#content {
     text-align: center;
   }
 
-  div#output {
+  div#left-panel {
+    width: 2.3em;
+    position: absolute;
+    top: 2.3em;
+    left: 0;
+    bottom: 1.3em;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  /* div#output {
     overflow: auto;
+  } */
+  div#output {
+    width: 100%;
+    /* height: 91%;  */
+    position: absolute;
+    top: 2.3em;
+    left: 0;
+    bottom: 1.3em;
+    overflow: scroll;
+   }
+  svg {
+    height: 100%;
+    width: 100%;
+    /* border:1px dotted #ccc;
+    background-color: #ccc; */
   }
   
+  /* ************* modal **************** */
   
+  /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.slidecontainer {
+  width: 2.3em; /* Width of the outside container */
+  /* height: 100%; */
+  font-family: Verdana, Geneva, sans-serif;
+    font-weight: 200;
+    color: #c0c0c0;
+    font-size: 0.8em;
+  margin-top: auto;
+  margin-bottom: auto;
+  text-align: center;
+}
+
+/* The slider itself */
+.slider {
+  width: 2.3em;
+  -webkit-appearance: slider-vertical;
+  height: 92%; /* Full-width */
+  /* vertical-align: center; */
+  background: #d3d3d3; /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  /* -webkit-transition: .2s; 0.2 seconds transition on hover */
+  /* transition: opacity .2s; */
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
