@@ -59,13 +59,14 @@ app.on('ready', () => {
 
         ipcMain.on('get-file-message', (event, arg) => {
             console.log(arg) // prints "ping"
-            // const files = dialog.showOpenDialogSync(mainWindow, {
-            //     properties: ['openFile'],
-            //     filters: [
-            //         {name: 'Dot file', extensions: ['dot']}
-            //     ]     
-            // });
-            event.returnValue = 'pong';
+            const files = dialog.showOpenDialogSync(mainWindow, {
+                properties: ['openFile'],
+                filters: [
+                    {name: 'Dot file', extensions: ['dot']},
+                    {name: 'Process file', extensions: ['process']}
+                ]     
+            });
+            event.returnValue = files[0];
           }
         );
 

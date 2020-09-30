@@ -6,6 +6,7 @@ const output = document.getElementById('output');
 const dotF = document.getElementById('dot');
 const open_dot_file = document.getElementById('open-dot-file');
 const button_get_param_1 = document.getElementById('get-param-1');
+const button_get_dot_file = document.getElementById('get-dot-file');
 const command_name = document.getElementById('command-name');
 const command_param_1 = document.getElementById('command-param-1');
 const command_param_2 = document.getElementById('command-param-2');
@@ -57,5 +58,10 @@ button_get_param_1.addEventListener('click', function() {
 
 open_dot_file.addEventListener('click', function() { 
   getFileName('command-param-1');
+}
+);
+
+button_get_dot_file.addEventListener('click', function() { 
+  getFileName('dot-file');
 }
 );
