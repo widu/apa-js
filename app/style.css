@@ -3,13 +3,8 @@
 This is a comment that the browser will ignore.
 It's for humans only.
 */ 
-
-div#content {
-    /* margin-left: 3em;
-    margin-top: 2.5em;
-    width: 98%;
-    float: left; */
-    /* height: 100%; */
+  body {
+    overflow: hidden;
   }
   
   div#header {
@@ -27,6 +22,7 @@ div#content {
     /* margin-left: 5em; */
     /* padding-left: 4em; */
   }
+
   div#header-content {
     margin-left: 2em;
     margin-top: 0.2em;

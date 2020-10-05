@@ -12,6 +12,7 @@ const command_param_1 = document.getElementById('command-param-1');
 const command_param_2 = document.getElementById('command-param-2');
 const command_param_3 = document.getElementById('command-param-3');
 const dot_file = document.getElementById('dot-file');
+const operation_def = document.getElementById('operation-def');
 
 
 var dotFile = '';
@@ -21,7 +22,7 @@ ipcRenderer.on('file-opened', (event, file, content) => {
     output.innerText = content;
     dotF.value = content;
     var event = new Event('change');
-
+    operation_def.innerHTML = file.match(/\w+.\w+$/);
     // Dispatch it.
     dotF.dispatchEvent(event);
 
