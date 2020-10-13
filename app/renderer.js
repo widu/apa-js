@@ -46,9 +46,9 @@ runCommand.addEventListener("click", sendCommand);
 
 // pobieranie nazwy pliku
 
-function getFileName( nazwa_pola )  {
+function getFileName( nazwa_pola, render = 'no' )  {
   const pole = document.getElementById(nazwa_pola);
-  pole.value = ipcRenderer.sendSync('get-file-message', 'ping');
+  pole.value = ipcRenderer.sendSync('get-file-message', render);
 };
 
 
@@ -58,7 +58,7 @@ button_get_param_1.addEventListener('click', function() {
 );
 
 open_dot_file.addEventListener('click', function() { 
-  getFileName('command-param-1');
+  getFileName('operation-def', 'yes');
 }
 );
 

@@ -67,6 +67,13 @@ app.on('ready', () => {
                 ]     
             });
             event.returnValue = files[0];
+            let file = files[0];
+            if (arg == 'yes') {
+                let content = fs.readFileSync(file).toString();
+                console.log(content);
+                event.reply('file-opened', file, content);
+                console.log('get-file-message success koniec');
+            }
           }
         );
 
