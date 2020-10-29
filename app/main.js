@@ -18,10 +18,10 @@ app.on('ready', () => {
     mainWindow.once('ready-to-show', () => {
         mainWindow.show();
 
-        ipcMain.on('run-command', (event, c, a1, a2, a3, dot) => {
-            console.log(c, a1, a2, a3) // prints "ping"
+        ipcMain.on('run-command', (event, cmd, dot, key) => {
+            console.log(cmd) // prints "ping"
         
-            if (a1 != null) {
+            if (dot != null) {
         
             var exec = require('child_process').exec
             function Callback(err, stdout, stderr) {
@@ -35,19 +35,19 @@ app.on('ready', () => {
                     file = dot;
                     const content = fs.readFileSync(file).toString();
                     console.log(content);
-                    event.reply('file-opened', file, content);
+                    event.reply('file-opened', file, content, key);
+                    console.log('key ', key);
                     console.log('success koniec');
                 }
             }
         
-            const cmd = c + ' ' + a1 + ' ' + a2 + ' "' + a3.replace(/\n/g, " "); + '"';
             console.log(cmd);
                 // res = exec('cd /Users/wdulek001/Documents/ProcessLibrary/FaktsPresentation & rdf_process faktspresentation.process', Callback);
                 // res = exec('rdf_process /Users/wdulek001/Documents/ProcessLibrary/FaktsPresentation/faktspresentation.process', Callback);
                 res = exec(cmd, Callback);
             // event.reply('asynchronous-reply', 'pong')
             } else {
-                file = c;
+                file = cmd;
                 const content = fs.readFileSync(file).toString();
                 console.log(content);
                 event.reply('file-opened', file, content);

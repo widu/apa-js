@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://kit.fontawesome.com/df06fff5c1.js" crossorigin="anonymous"></script>
     <!-- <link href="../node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet"> -->
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
     <!-- <script src='../node_modules/bootstrap/dist/js/bootstrap.js'></script> -->
@@ -16,41 +17,42 @@
     
       <div id="header" >
         <div id="header-content">
+          <button id="runCommand" class="button button2"><i class="fas fa-cog fa-spin"></i> Run cmd</button>
+          <!-- Trigger/Open The Modal -->
+          <button id="myBtn" class="button button2"><i class='fas fa-edit'></i> Edit cmd</button>
+          <button id="open-dot-file" class="button button2"><i class="fas fa-file"></i> Open dot file</button>
           <i>File:</i> <span id="operation-def">null</span>
-          <button id="open-dot-file">Open dot file</button>
-          <button id="runCommand">Cmd</button>
-            <label id="engine">
-              <i>Engine:</i>
-              <select id="select-engine">
+          <label id="engine">
+            <i>Engine:</i>
+            <select id="select-engine" class="select">
                 <option>circo</option>
                 <option>dot</option>
                 <option>fdp</option>
                 <option>neato</option>
                 <option>osage</option>
                 <option>twopi</option>
-              </select>
-            </label>
-            <input id="dot" hidden />
+            </select>
+          </label>
+          <input id="dot" hidden />
 
-            <!-- Trigger/Open The Modal -->
-          <button id="myBtn">Open Modal</button>
-
+        </div>
+      </div>
 <!-- The Modal -->
-          <div id="myModal" class="modal">
+    <div id="myModal" class="modal">
 
   <!-- Modal content -->
-            <div class="modal-content">
+        <div class="modal-content">
               <span class="close">&times;</span>
-              <h1>The operation definition</h1>
+              <h1><i>The command definition</i></h1>
               
-              <label for="Choice1"><input type="radio" id="Choice1" name="operation-type" value="Run command">
+              <label for="Choice1" style="display: none"  ><input type="radio" id="Choice1" name="operation-type" value="Run command" checked>
               Run command</label>
-              <label for="Choice2"><input type="radio" id="Choice2" name="operation-type" value="Open file">
+              <label for="Choice2" style="display: none" ><input type="radio" id="Choice2" name="operation-type" value="Open file">
               Open dot file</label>
-
-              <label>Command name: <br><input id="command-name" type="text" name="command-name" value="rdf_process"> </label> <br>
-              <label>Command paramiter 1: <br><input id="command-param-1" type="text" name="command-param-1" size="90" maxlength="100" value="/Users/wdulek001/Documents/ProcessLibrary/FaktsPresentation/faktspresentation.process"> </label> <button id="get-param-1">File</button><br>
-              <label>Command paramiter 2: <br><input id="command-param-2" type="text" name="command-param-2" size="90" maxlength="100" value="filtr2"> </label> <br>
+              <br><br>
+              <label>Command name: <br><input id="command-name" type="text" name="command-name" value="rdf_process"> </label> <br><br>
+              <label>Command paramiter 1: <br><input id="command-param-1" type="text" name="command-param-1" size="90" maxlength="100" value="/Users/wdulek001/Documents/ProcessLibrary/FaktsPresentation/faktspresentation.process"> </label> <button id="get-param-1" class="button button2"><i class="fas fa-file"></i> File</button><br><br>
+              <label>Command paramiter 2: <br><input id="command-param-2" type="text" name="command-param-2" size="90" maxlength="100" value="filtr2"> </label> <br><br>
               <label>Command paramiter 3: <br><textarea id="command-param-3" name="command-param-3" rows="4" cols="50">CONSTRUCT { ?s ?p ?o . 
               }
                
@@ -69,72 +71,43 @@
               }
                 
                  }
-              </textarea> </label> <br>
-              <label>Output dot file: <br><input id="dot-file" type="text" name="dot-file" size="90" maxlength="100" value="/Users/wdulek001/Documents/analiza/ArchiMate/res_graph1.dot"> </label> <button id="get-dot-file">File</button> <br>
-            </div>
-
-          </div>
-
+              </textarea> </label> <br><br>
+              <label>Output dot file: <br><input id="dot-file" type="text" name="dot-file" size="90" maxlength="100" value="/Users/wdulek001/Documents/analiza/ArchiMate/res_graph1.dot"> </label> <button id="get-dot-file" class="button button2"><i class="fas fa-file"></i> File</button> <br>
         </div>
-        <!-- <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="#">Page 1</a></li>
-          <li><a href="#">Page 2</a></li>
-          <li><a href="#">Page 3</a></li>
-        </ul> -->
 
-      </div>
-   
+    </div>
+
     
-      <!-- <div id="header" class="row" >
-        <div id="header-content" class="col-md-12">
-          <i>File:</i> dgdsgfgdf gdg sfdsjdfsdhfskhf sfdhksjhfkshfshf sfdhsdfhsdkj fsfdhf kjdshfkssfsjfdsfds  fdjhsfkjshfksjd hf fsdfskfkdshf sfhf skhf
-          <label id="engine">
-            <i>Engine:</i>
-            <select id="select-engine">
-              <option>circo</option>
-              <option>dot</option>
-              <option>fdp</option>
-              <option>neato</option>
-              <option>osage</option>
-              <option>twopi</option>
-            </select>
-          </label>
-          <input id="dot" hidden />
-        </div>
-      </div> -->
-       
-       
-        <!--
-        This is a comment that the browser will ignore.
-        It's for humans only.
-        -->
-
-
-            <!-- <div id="options">
-              
-                
-                
-            </div> -->
-            <div id="output" >
+    <div id="output" >
               <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="50" cy="50" r="50"/>
               </svg>
-              <div id="error"></div>
-            </div>
-            <div id="left-panel">
+        <div id="error"></div>
+    </div>
+    
+    <div id="left-panel">
               <div class="slidecontainer">
                 <span id="demo"></span><br>
                 <input type="range" min="0" max="100" value="0" class="slider" id="myRange">
                 <!-- <span id="demo"></span> -->
               </div> 
-            </div>
-            <div id="footer">
+    </div>
+    <div id="footer">
               <!-- <div class="slidecontainer">
                 - <input type="range" min="0" max="100" value="0" class="slider" id="myRange"> +
                 Value: <span id="demo"></span>
               </div> -->
-            </div> 
+              <div id="paginator" class="pagination">
+                <!-- <a href="#">&laquo;</a>
+                <a href="#">1</a>
+                <a class="active" href="#" id="2">2</a>
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#">5</a>
+                <a href="#">6</a>
+                <a href="#">&raquo;</a> -->
+              </div>
+    </div> 
 
  
    

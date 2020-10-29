@@ -5,6 +5,7 @@ It's for humans only.
 */ 
   body {
     overflow: hidden;
+    font-family: Verdana, Geneva, sans-serif;
   }
   
   div#header {
@@ -24,25 +25,47 @@ It's for humans only.
   }
 
   div#header-content {
-    margin-left: 2em;
+    margin-left: 0.2em;
     margin-top: 0.2em;
   }
-  /* div#leftbar {
-    width: 3em;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: #515151;
+  label#engine {
+    float: right;
+    margin-right: 4px;
   }
-  div#header h2 {
-    font-family: Verdana, Geneva, sans-serif;
+
+  .button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 1px 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1em;
     font-weight: 200;
+    margin: 1px 4px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+  }
+
+  .button2 {
+    background-color:  #d3d3d3;
+    color: #454545; 
+    border: 2px solid #c0c0c0;
+    border-radius: 4px;
+  }
+
+  .select {
+    background-color:  #d3d3d3;
+    color: #454545; 
+    border: 2px solid #c0c0c0;
+    border-radius: 4px;
+  }
+  
+  .button2:hover {
+    background-color: #454545;
     color: #c0c0c0;
-    font-size: 0.8em;
-    margin-left: 5em;
-    padding: 0;
-  } */
+  }
   
   i {
     font-family: Verdana, Geneva, sans-serif;
@@ -52,7 +75,8 @@ It's for humans only.
   }
   
   div#footer {
-    height: 1.2em;
+    height: 1.6em;
+    min-height: 1.2em;
     width: 100%;
     position: absolute;
     /* right: 0; */
@@ -61,6 +85,8 @@ It's for humans only.
     padding: 0.1em;
     background-color: #407cfd;
     text-align: center;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 0.7em;
   }
 
   div#left-panel {
@@ -68,7 +94,7 @@ It's for humans only.
     position: absolute;
     top: 2.3em;
     left: 0;
-    bottom: 1.3em;
+    bottom: 1.6em;
     margin-top: auto;
     margin-bottom: auto;
   }
@@ -82,7 +108,7 @@ It's for humans only.
     position: absolute;
     top: 2.3em;
     left: 0;
-    bottom: 1.3em;
+    bottom: 1.6em;
     overflow: scroll;
    }
   svg {
@@ -104,19 +130,24 @@ It's for humans only.
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  /* background-color: #454545; */
+  background-color: rgb(0,0,0); /*Fallback color*/
+  background-color: rgba(0,0,0,0.4); /*Black w/ opacity*/
 }
 
 /* Modal Content/Box */
 .modal-content {
-  background-color: #fefefe;
+  /* background-color: #fefefe; */
+  background-color: #454545;
+  color: #c0c0c0;
   margin: 5% auto; /* 15% from the top and centered */
   padding: 20px;
-  border: 1px solid #888;
+  border: 1px solid #407cfd;
   width: 80%; /* Could be more or less, depending on screen size */
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 0.8em;
 }
-
+/*#888;*/
 /* The Close Button */
 .close {
   color: #aaa;
@@ -132,6 +163,22 @@ It's for humans only.
   cursor: pointer;
 }
 
+input {
+  background-color: #c0c0c0;
+  color: #454545;
+  padding: 4px 4px;
+  margin: 4px 0;
+  box-sizing: border-box;
+}
+
+textarea {
+  color: #454545;
+  background-color: #c0c0c0;
+  padding: 4px 4px;
+  margin: 4px 0;
+  box-sizing: border-box;
+}
+
 .slidecontainer {
   width: 2.3em; /* Width of the outside container */
   /* height: 100%; */
@@ -143,6 +190,8 @@ It's for humans only.
   margin-bottom: auto;
   text-align: center;
 }
+
+
 
 /* The slider itself */
 .slider {
@@ -159,3 +208,27 @@ It's for humans only.
   margin-bottom: auto;
 }
 
+/* Pagination links */
+.pagination {
+  margin-top: 1.5px;
+  padding-top: 0.2px;
+}
+
+.pagination a {
+  color: white;
+  float: center;
+  padding: 2px 4px;
+  margin: 1px 2px;
+  text-decoration: none;
+  transition: background-color .3s;
+  text-align: center;
+}
+
+/* Style the active/current link */
+.pagination a.active {
+  background-color: white;
+  color: #407cfd;
+}
+
+/* Add a grey background color on mouse-over */
+.pagination a:hover:not(.active) {background-color: #ddd;}
