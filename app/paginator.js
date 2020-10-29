@@ -18,9 +18,9 @@ class Paginator {
         element.classList.add("active");
     }
     next() {
-        this.number_of_first_record = this.number_of_first_record + this.max_record_on_page;
-        if (this.number_of_first_record >= this.indexes.length) {
-            this.number_of_first_record = this.indexes.length-1;
+        let number_of_first_record = this.number_of_first_record + this.max_record_on_page;
+        if (number_of_first_record < this.indexes.length) {
+            this.number_of_first_record = number_of_first_record ;
         }
         this.redrawPaginator();
     }
