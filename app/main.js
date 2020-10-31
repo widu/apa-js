@@ -5,8 +5,8 @@ let mainWindow = null;
 
 app.on('ready', () => {
     mainWindow = new BrowserWindow({
-        x: "200px", 
-        y: "150ppx",
+        x: "250px", 
+        y: "200ppx",
         show: false,
         webPreferences: {
             nodeIntegration: true
@@ -79,28 +79,7 @@ app.on('ready', () => {
 
         
         // mainWindow.removeMenu();
-
-        // ************************************8
-        // var exec = require('child_process').exec
-        // function Callback(err, stdout, stderr) {
-        // if (err) {
-        //     console.log(`exec error: ${err}`);
-        //     console.log('error koniec');
-        //     return;
-        //     }else{
-        //     console.log(`${stdout}`);
-        //     file = "/Users/wdulek001/Documents/ProcessLibrary/FaktsPresentation/res_graph1.dot";
-        //     const content = fs.readFileSync(file).toString();
-        //     console.log(content);
-        //     mainWindow.webContents.send('file-opened', file, content);
-        //     console.log('success koniec');
-        //     }
-        // }
-
-        // res = exec('cd /Users/wdulek001/Documents/ProcessLibrary/FaktsPresentation & rdf_process faktspresentation.process', Callback);
-        //****************************************************** */
         
-        //getFileFromUser();
         //mainWindow.webContents.openDevTools();
     });
 

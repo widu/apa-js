@@ -19,6 +19,7 @@ const command_param_2 = document.getElementById('command-param-2');
 const command_param_3 = document.getElementById('command-param-3');
 const dot_file = document.getElementById('dot-file');
 const operation_def = document.getElementById('operation-def');
+const runCommandIcon = document.getElementById('runCommandIcon');
 let indexes = [];
 
 
@@ -44,6 +45,7 @@ ipcRenderer.on('file-opened', (event, file, content, key="") => {
   dotFile = content;
   output.innerText = content;
   dotF.value = content;
+  runCommandIcon.classList.remove('fa-spin');
   var event = new Event('change');
   operation_def.innerHTML = file.match(/\w+.\w+$/);
     // Dispatch it.
@@ -71,6 +73,7 @@ sendCommand = () => {
     let choice = document.getElementById("Choice2").checked;
     if (choice == true) {
       ipcRenderer.send('run-command', dot_file.value);
+      runCommandIcon.classList.add('fa-spin');
     } else {
       if (cmd_obj != '') { 
         console.log('jest w bazie');
@@ -84,6 +87,7 @@ sendCommand = () => {
           //some code
           ipcRenderer.send('run-command', command1.cmd , dot_file.value, command1.key);
           command1.save(cmdDB, true);
+          runCommandIcon.classList.add('fa-spin');
         } else {
           output.innerText = cmd_obj.dot_file_content;
           dotF.value = cmd_obj.dot_file_content;
@@ -94,6 +98,7 @@ sendCommand = () => {
       else { 
         ipcRenderer.send('run-command', command1.cmd , dot_file.value, command1.key);
         command1.save(cmdDB, true);
+        runCommandIcon.classList.add('fa-spin');
       }
   };
     
